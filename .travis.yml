@@ -15,11 +15,14 @@ before_script:
   - git clone https://github.com/includeos/hello_world
 
 script:
-  - conan install hello_world -pr apple-clang-10-macos-toolchain
+  - conan install hello_world -pr clang-6.0-macos-x86_64
   - source activate.sh
   - cmake hello_world
   - cmake --build
   - boot hello
+
+after_script:
+  - source deactivate.sh
   - |
     set +e
     pkill -9 -P $$ &> /dev/null || true
