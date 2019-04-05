@@ -10,7 +10,8 @@ before_install:
 install:
   - brew install includeos
 
-after_install:
+before_script:
+  - conan config install https://github.com/includeos/conan_config.git
   - git clone https://github.com/includeos/hello_world
 
 script:
