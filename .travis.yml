@@ -18,7 +18,7 @@ script:
   - conan install hello_world -pr clang-6.0-macos-x86_64
   - source activate.sh
   - cmake hello_world
-  - cmake --build
+  - cmake --build .
   - boot hello
 
 after_script:
