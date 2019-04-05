@@ -1,0 +1,26 @@
+os: osx
+language: bash
+
+git:
+  depth: false
+
+before_install:
+  - .ci/install.sh
+
+install:
+  - brew tap includeos/includeos
+  - brew install includeos
+
+after_install:
+  - git clone https://github.com/includeos/hello_world
+
+script:
+  - conan install hello_world -pr apple-clang-10-macos-toolchain
+  - source activate.sh
+  - cmake hello_world
+  - cmake --build
+  - boot hello
+  - |
+    set +e
+    pkill -9 -P $$ &> /dev/null || true
+    exit $1
