@@ -20,7 +20,7 @@ script:
   - source activate.sh
   - cmake hello_world
   - cmake --build .
-  - gtimeout 7 boot hello > hello_log.txt || exit $1
+  - gtimeout 7 boot hello > hello_log.txt || exit 0
   - |
     if grep -F "Running [ Hello world - OS included ]" hello_log.txt
     then
