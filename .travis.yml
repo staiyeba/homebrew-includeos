@@ -20,13 +20,13 @@ script:
   - source activate.sh
   - cmake hello_world
   - cmake --build .
-  - gtimeout 10 boot hello > hello_log.txt
+  - gtimeout 7 boot hello > hello_log.txt
   - |
-    if grep -Fxq "+--> Running [ Hello world - OS included ]" hello_log.txt
+    if grep -Fq "Running [ Hello world - OS included ]" hello_log.txt
     then
-      exit $1
+      echo "Hello World -  Success! :)"
     else
-      exit $0
+      echo "Failed to reach Success :("
     fi
 
 after_script:
