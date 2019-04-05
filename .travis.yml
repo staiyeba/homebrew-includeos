@@ -9,6 +9,7 @@ before_install:
 
 install:
   - brew install includeos
+  - conan --version
 
 before_script:
   - conan config install https://github.com/includeos/conan_config.git
@@ -19,7 +20,15 @@ script:
   - source activate.sh
   - cmake hello_world
   - cmake --build .
-  - boot hello && exit $1
+  - boot hello
+  - |
+    if [ $? -eq 0 ]; then
+      echo OK
+      exit $1
+    else
+      echo FAIL
+      exit $0
+    fi
 
 after_script:
   - source deactivate.sh
