@@ -5,10 +5,9 @@ git:
   depth: false
 
 before_install:
-  - .ci/install.sh
+  - brew tap includeos/includeos
 
 install:
-  - brew tap includeos/includeos
   - brew install includeos
 
 after_install:
