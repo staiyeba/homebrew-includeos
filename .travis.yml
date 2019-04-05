@@ -19,7 +19,7 @@ script:
   - source activate.sh
   - cmake hello_world
   - cmake --build .
-  - boot hello
+  - boot hello && exit $1
 
 after_script:
   - source deactivate.sh
