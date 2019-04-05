@@ -10,6 +10,7 @@ before_install:
 install:
   - brew install includeos
   - conan --version
+  - brew install coreutils
 
 before_script:
   - conan config install https://github.com/includeos/conan_config.git
@@ -22,7 +23,7 @@ script:
   - cmake --build .
   - gtimeout 7 boot hello > hello_log.txt
   - |
-    if grep -Fq "Running [ Hello world - OS included ]" hello_log.txt
+    if grep -F "Running [ Hello world - OS included ]" hello_log.txt
     then
       echo "Hello World -  Success! :)"
     else
