@@ -5,10 +5,10 @@ git:
   depth: false
 
 before_install:
-  - HOMEBREW_NO_UPDATE=1 brew tap includeos/includeos
+  - HOMEBREW_NO_AUTO_UPDATE=1 brew tap includeos/includeos
 
 install:
-  - HOMEBREW_NO_UPDATE=1 brew install includeos
+  - HOMEBREW_NO_AUTO_UPDATE=1 brew install includeos
   - conan --version
 
 before_script:
