@@ -10,11 +10,14 @@ before_install:
 install:
   - brew install includeos
   - conan --version
-  
+
 before_cache:
   - brew cleanup
 
-cache: packages
+cache:
+  - packages
+  - directories:
+    - $HOME/Library/Caches/Homebrew
 
 before_script:
   - conan config install https://github.com/includeos/conan_config.git
