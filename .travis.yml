@@ -35,7 +35,7 @@ script:
     then
       echo "Hello World -  Success! :)"
     else
-      echo "Failed to reach Success :("
+      echo "Failed :("
     fi
 
 after_script:
