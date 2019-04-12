@@ -7,7 +7,6 @@ class Includeos < Formula
 	version "0.1.0"
 	revision 5
 
-	depends_on "llvm@6"
 	depends_on "qemu"
 	depends_on "cmake"
 	depends_on "python"
