@@ -4,12 +4,6 @@ language: bash
 git:
   depth: false
 
-before_install:
-  - brew tap includeos/includeos
-
-install:
-  - brew install includeos
-  - conan --version
 
 before_cache:
   - brew cleanup
