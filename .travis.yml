@@ -4,7 +4,6 @@ language: bash
 git:
   depth: false
 
-
 before_cache:
   - brew cleanup
 
@@ -12,6 +11,14 @@ cache:
   - packages
   - directories:
     - $HOME/Library/Caches/Homebrew
+    - $HOME/Library/Taps
+
+before_install:
+  - brew tap includeos/includeos
+
+install:
+  - brew install includeos
+  - conan --version
 
 before_script:
   - conan config install https://github.com/includeos/conan_config.git
