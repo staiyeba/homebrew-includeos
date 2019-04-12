@@ -59,6 +59,6 @@ class Includeos < Formula
 		Note that this will overwrite your existing Conan profiles and
 		remotes, unless you also set CONAN_USER_HOME to point to an
 		unused location (default is ~/.conan).
-	EOS
+#	EOS
 	end
 end
