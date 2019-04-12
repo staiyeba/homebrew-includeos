@@ -8,7 +8,6 @@ before_cache:
   - brew cleanup
 
 cache:
-  - packages
   - directories:
     - $HOME/Library/Caches/Homebrew
     - /usr/local/Homebrew/Library/Taps/*/*
