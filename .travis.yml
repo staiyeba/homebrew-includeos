@@ -31,7 +31,8 @@ script:
     then
       echo "Hello World -  Success! :)"
     else
-      cat hello_log.txt
+      cat -b hello_log.txt
+      sleep 5
       exit 1
     fi
 
