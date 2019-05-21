@@ -36,6 +36,7 @@ script:
       echo "Hello World -  Success! :)"
     else
       echo "Failed :("
+      exit 1
     fi
 
 after_script:
